@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[first]]></title>
+    <url>%2F2018%2F06%2F08%2Ffirst%2F</url>
+    <content type="text"><![CDATA[HOMEdirectorymall GITLAB 机器列表及应用 设备名 | 公用IP | 专用IP | 模块 | 类型说明 | 应用 —|—|—|—|—|— svn-demo.shein.com | 50.23.190.55 | 10.28.140.100 | 代码构建归档 | 中间件 迁移说明 提前迁移:是 项目结构图或说明 3. 新机房配置要求 机器用途 | 数量 | 配置 ---|---|--- Gitlab主 | 1 | 4C16G500G Gitlib备 | 1 | 4C16G500G 迁移前准备工作 搭建Gitlab服务器； 验证新旧机器上版本的gitlab数据格式是否兼容（若版本一致，则忽略此步骤）； 确定时间窗口，停用发布系统； 确定时间窗口，停用旧gitlab服务，禁止提交修改代码； gitlab数据库中的url可能需要修改； 迁移步骤 关闭旧机器上的gitlab备份定时任务； 手动备份旧机器上的gitlab数据； 将第2步中备份的tar文件拷贝到新机器上对应的gitlab备份目录中，yum安装/var/opt/gitlab/backups; 登录新gitlab机器，恢复数据； 验证新机器上gitlab服务正常及代码完整； 若上一步正常，则将发布系统中的git库地址修改为新库地址； 配置并启动gitlab备份定时任务； 迁移注意事项及风险 风险 新旧gitlab服务器上代码不一致； 发布系统执行发布代码操作失败导致线上业务故障； 注意事项 备份之前，确定时间窗口，禁止push代码； 方法一：通知研发在指定时间段不要推送代码到旧gitlab； 方法二：直接关闭旧gitlab对外的URL； 迁移过程中，禁止使用发布系统； 研发人员后面改用域名访问； 正式迁移工作量说明：按天计算，最低0.5天，并做简单说明 迁移阶段 | 具体任务 | 天数 | 负责人 | 备注 —|—|—|—|— 迁移之前 | 搭建gitlab服务器 | 0.5 迁移过程 | 迁移数据并恢复 | 0.5 迁移之后 | 1.验证gitlab可用；2.修改发布系统的git库链接； 3.配置并启动gitlab日常备份定时任务； | 1]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F06%2F08%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
