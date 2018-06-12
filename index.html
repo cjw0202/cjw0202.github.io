@@ -389,8 +389,7 @@
 
       
         
-          
-            <h1 id="HOME"><a href="#HOME" class="headerlink" title="HOME"></a><a href="http://gitlab.shein.com:8088/operation-share/document/wikis/home" target="_blank" rel="noopener">HOME</a></h1><h1 id="directory"><a href="#directory" class="headerlink" title="directory"></a><a href="http://gitlab.shein.com:8088/operation-share/document/wikis/lt-sub-system" target="_blank" rel="noopener">directory</a></h1><h1 id="mall"><a href="#mall" class="headerlink" title="mall"></a><a href="http://gitlab.shein.com:8088/operation-share/document/wikis/mall-sub-system" target="_blank" rel="noopener">mall</a></h1><ul>
+          <h1 id="HOME"><a href="#HOME" class="headerlink" title="HOME"></a><a href="http://gitlab.shein.com:8088/operation-share/document/wikis/home" target="_blank" rel="noopener">HOME</a></h1><h1 id="directory"><a href="#directory" class="headerlink" title="directory"></a><a href="http://gitlab.shein.com:8088/operation-share/document/wikis/lt-sub-system" target="_blank" rel="noopener">directory</a></h1><h1 id="mall"><a href="#mall" class="headerlink" title="mall"></a><a href="http://gitlab.shein.com:8088/operation-share/document/wikis/mall-sub-system" target="_blank" rel="noopener">mall</a></h1><ul>
 <li>GITLAB</li>
 </ul>
 <ol>
@@ -417,45 +416,14 @@
 <li>验证新旧机器上版本的gitlab数据格式是否兼容（若版本一致，则忽略此步骤）；</li>
 <li>确定时间窗口，停用发布系统；</li>
 <li>确定时间窗口，停用旧gitlab服务，禁止提交修改代码；</li>
-<li>gitlab数据库中的url可能需要修改；</li>
-</ol>
-</li>
-<li><p>迁移步骤</p>
-<ol>
-<li>关闭旧机器上的gitlab备份定时任务；</li>
-<li>手动备份旧机器上的gitlab数据；</li>
-<li>将第2步中备份的tar文件拷贝到新机器上对应的gitlab备份目录中，yum安装/var/opt/gitlab/backups;</li>
-<li>登录新gitlab机器，恢复数据；</li>
-<li>验证新机器上gitlab服务正常及代码完整；</li>
-<li>若上一步正常，则将发布系统中的git库地址修改为新库地址；</li>
-<li>配置并启动gitlab备份定时任务；</li>
-</ol>
-</li>
-<li><p>迁移注意事项及风险</p>
-<ol>
-<li>风险<ol>
-<li>新旧gitlab服务器上代码不一致；</li>
-<li>发布系统执行发布代码操作失败导致线上业务故障；</li>
-</ol>
-</li>
-<li>注意事项<ol>
-<li>备份之前，确定时间窗口，禁止push代码；<ul>
-<li>方法一：通知研发在指定时间段不要推送代码到旧gitlab；</li>
-<li>方法二：直接关闭旧gitlab对外的URL；</li>
-</ul>
-</li>
-<li>迁移过程中，禁止使用发布系统；</li>
-<li>研发人员后面改用域名访问；   </li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>正式迁移工作量<br>说明：按天计算，最低0.5天，并做简单说明</p>
-<p> 迁移阶段 | 具体任务 | 天数 | 负责人 | 备注<br> —|—|—|—|—<br> 迁移之前 | 搭建gitlab服务器 | 0.5<br> 迁移过程 | 迁移数据并恢复 | 0.5<br> 迁移之后 | 1.验证gitlab可用；2.修改发布系统的git库链接； 3.配置并启动gitlab日常备份定时任务； | 1</p>
-</li>
-</ol>
-
-          
+<li>gitlab数据库中的url可能需要修改；
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/08/first/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
