@@ -350,7 +350,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/19/PM2的安装和使用/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2018/06/19/PM2的安装和使用/" itemprop="url">PM2的安装和使用</a></h1>
         
 
         <div class="post-meta">
@@ -362,7 +362,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T15:02:50+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T15:06:00+08:00">
                 2018-06-19
               </time>
             
@@ -391,7 +391,7 @@
 
           
           
-             <span id="/2018/06/19/PM2的安装和使用/" class="leancloud_visitors" data-flag-title="">
+             <span id="/2018/06/19/PM2的安装和使用/" class="leancloud_visitors" data-flag-title="PM2的安装和使用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -442,97 +442,14 @@
 
       
         
-          
-            <h4 id="PM2介绍"><a href="#PM2介绍" class="headerlink" title="PM2介绍"></a>PM2介绍</h4><p>&emsp;&emsp;PM2 is a process manager for the <a href="https://en.wikipedia.org/wiki/JavaScript" title="JavaScript" target="_blank" rel="noopener">JavaScript</a> runtime <a href="https://en.wikipedia.org/wiki/Node.js" title="Node.js" target="_blank" rel="noopener">Node.js</a>. In 2016, PM2 is ranked as the <a href="http://stats.js.org/" target="_blank" rel="noopener">82nd most popular</a> JavaScript project on GitHub.<br>&emsp;&emsp;PM2 or Process Manager 2, is an Open Source, production <a href="https://en.wikipedia.org/wiki/Node.js" title="Node.js" target="_blank" rel="noopener">Node.js</a> process manager helping Developers and Devops manage Node.js applications in production environment. In comparison with other process manager like Supervisord, Forever, <a href="https://en.wikipedia.org/wiki/Systemd" title="Systemd" target="_blank" rel="noopener">Systemd</a>, some key features of PM2 are automatic application load balancing, declarative application configuration, deployment system and monitoring.<br>&emsp;&emsp;Started in 2013 by Alexandre Strzelewicz. The code source is hosted on <a href="https://en.wikipedia.org/wiki/GitHub" title="GitHub" target="_blank" rel="noopener">GitHub</a> and installable via <a href="https://en.wikipedia.org/wiki/Npm_(software" target="_blank" rel="noopener">Npm (software)</a> “Npm (software)”).<br><code>说明：本次安装环境为CentOS7上进行</code></p>
-<h4 id="PM2安装"><a href="#PM2安装" class="headerlink" title="PM2安装"></a>PM2安装</h4><h5 id="1-安装node"><a href="#1-安装node" class="headerlink" title="1.安装node"></a>1.安装node</h5><p>首先，从<a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js官网</a>下载对应平台的<a href="https://nodejs.org/dist/v8.11.3/node-v8.11.3.tar.gz" target="_blank" rel="noopener">安装程序</a>，网速慢的童鞋请移步<a href="https://pan.baidu.com/s/1kU5OCOB#list/path=%2Fpub%2Fnodejs" target="_blank" rel="noopener">国内镜像</a>。</p>
-<pre><code>[root@www ~]# tar xf node-v10.3.0-linux-x64.tar.gz
-[root@www ~]# cd node-v10.3.0-linux-x64/
-[root@www node-v10.3.0-linux-x64]# ls
-bin  CHANGELOG.md  include  lib  LICENSE  README.md  share
-[root@www node-v10.3.0-linux-x64]# 
-</code></pre><p>加入环境变量中：</p>
-<pre><code>[root@www node-v10.3.0-linux-x64]# echo &quot;export PATH=/usr/local/node-v10.3.0-linux-x64/bin:$PATH&quot; &gt; /etc/profile.d/nodejs.sh
-[root@www node-v10.3.0-linux-x64]# source /etc/profile
-[root@www node-v10.3.0-linux-x64]# npm -v
-6.1.0
-[root@www node-v10.3.0-linux-x64]# 
-</code></pre><h5 id="2-安装pm2"><a href="#2-安装pm2" class="headerlink" title="2.安装pm2"></a>2.安装pm2</h5><p>通过上面node提供的npm进行安装</p>
-<pre><code>[root@www ~]# npm install pm2 -g
-</code></pre><p><img width="200" height="150" src="https://upload-images.jianshu.io/upload_images/11877872-31d5d4bf29d341da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br>如图提示说明安装成功</p>
-<h4 id="PM2使用"><a href="#PM2使用" class="headerlink" title="PM2使用"></a>PM2使用</h4><pre><code>start [options] &lt;file|json|stdin|app_name|pm_id...&gt;  后台启动node.js应用
-trigger &lt;proc_name&gt; &lt;action_name&gt; [params]           通过此命令触发操作流程？？
-deploy &lt;file|environment&gt;                            通过环境变量或配置文件发布node.js项目
-startOrRestart &lt;json&gt;                                start or restart JSON file
-startOrReload &lt;json&gt;                                 start or gracefully reload JSON file
-pid [app_name]                                       返回指定app的pid或返回所有的pid
-startOrGracefulReload &lt;json&gt;                         start or gracefully reload JSON file
-stop [options] &lt;id|name|all|json|stdin...&gt;           停止一个进程 (若要重新启动, 执行pm2 restart &lt;app&gt;)
-restart [options] &lt;id|name|all|json|stdin...&gt;        重启一个进程
-scale &lt;app_name&gt; &lt;number&gt;                            在集群模式中依赖总数增加或减少集群数量
-snapshot                                             snapshot PM2 memory
-profile &lt;command&gt;                                    CPU的使用情况
-reload &lt;name|all&gt;                                    重新加载进程 (注意这个只针对http/https的应用)
-gracefulReload &lt;name|all&gt;                            优雅地重新加载一个进程. 发送&quot;shutdown&quot; 关闭所有的连接.
-id &lt;name&gt;                                            获取app的id
-delete &lt;name|id|script|all|json|stdin...&gt;            停止次进程并且冲pm2管理列表中删除此进程
-sendSignal &lt;signal&gt; &lt;pm2_id|name&gt;                    向目标进程发送一个系统signal
-ping                                                 ping pm2的后台进程 - 如果挂了 就重启
-updatePM2                                            使用内存中的PM2更新内存中的
-update                                               updatePM2的别名 
-install|module:install [options] [module|git:/]      安装或者更新模块 (或者是模块的设置) 然后永久运行它
-module:update &lt;module|git:/&gt;                         更新模块并永久运行
-module:generate [app_name]                           在当前目录生成一个事例模块
-uninstall|module:uninstall &lt;module&gt;                  停止并卸载一个模块
-publish|module:publish                               Publish the module you are currently on
-set [key] [value]                                    sets the specified config &lt;key&gt; &lt;value&gt;
-multiset &lt;value&gt;                                     multiset eg &quot;key1 val1 key2 val2
-get [key]                                            get value for &lt;key&gt;
-conf [key] [value]                                   get / set module config values
-config &lt;key&gt; [value]                                 get / set module config values
-unset &lt;key&gt;                                          clears the specified config &lt;key&gt;
-report                                               give a full pm2 report for https://github.com/Unitech/pm2/issues
-link|interact [options] [secret] [public] [name]     linking action to keymetrics.io - command can be stop|info|delete|restart
-unlink                                               linking action to keymetrics.io - command can be stop|info|delete|restart
-unmonitor [name]                                     unmonitor target process
-monitor [name]                                       monitor target process
-open                                                 open dashboard in browser
-register                                             create an account on keymetrics
-login                                                login to keymetrics and link current PM2
-web                                                  launch a health API on 0.0.0.0:9615
-dump|save                                            dump all processes for resurrecting them later
-send &lt;pm_id&gt; &lt;line&gt;                                  send stdin to &lt;pm_id&gt;
-attach &lt;pm_id&gt; [comman]                              attach stdin/stdout to application identified by &lt;pm_id&gt;
-resurrect                                            resurrect previously dumped processes
-unstartup [platform]                                 disable and clear auto startup - [platform]=systemd,upstart,launchd,rcd
-startup [platform]                                   setup script for pm2 at boot - [platform]=systemd,upstart,launchd,rcd
-logrotate                                            copy default logrotate configuration
-ecosystem|init [mode]                                generate a process conf file. (mode = null or simple)
-reset &lt;name|id|all&gt;                                  reset counters for process
-describe &lt;id&gt;                                        describe all parameters of a process id
-desc &lt;id&gt;                                            (alias) describe all parameters of a process id
-info &lt;id&gt;                                            (alias) describe all parameters of a process id
-show &lt;id&gt;                                            (alias) describe all parameters of a process id
-list|ls                                              list all processes
-l                                                    (alias) list all processes
-ps                                                   (alias) list all processes
-status                                               (alias) list all processes
-jlist                                                list all processes in JSON format
-prettylist                                           print json in a prettified JSON
-monit                                                launch termcaps monitoring
-imonit                                               launch legacy termcaps monitoring
-dashboard|dash                                       launch dashboard with monitoring and logs
-flush                                                flush logs
-reloadLogs                                           reload all logs
-logs [options] [id|name]                             stream logs file. Default stream all logs
-kill                                                 kill daemon
-pull &lt;name&gt; [commit_id]                              updates repository for a given app
-forward &lt;name&gt;                                       updates repository to the next commit for a given app
-backward &lt;name&gt;                                      downgrades repository to the previous commit for a given app
-gc                                                   force PM2 to trigger garbage collection
-deepUpdate                                           performs a deep update of PM2
-serve|expose [path] [port]                           serve a directory over http via port
-</code></pre>
-          
+          <h4 id="PM2介绍"><a href="#PM2介绍" class="headerlink" title="PM2介绍"></a>PM2介绍</h4><p>&emsp;&emsp;PM2 is a process manager for the <a href="https://en.wikipedia.org/wiki/JavaScript" title="JavaScript" target="_blank" rel="noopener">JavaScript</a> runtime <a href="https://en.wikipedia.org/wiki/Node.js" title="Node.js" target="_blank" rel="noopener">Node.js</a>. In 2016, PM2 is ranked as the <a href="http://stats.js.org/" target="_blank" rel="noopener">82nd most popular</a> JavaScript project on GitHub.<br>&emsp;&emsp;PM2 or Process Manager 2, is an Open Source, production <a href="https://en.wikipedia.org/wiki/Node.js" title="Node.js" target="_blank" rel="noopener">Node.js</a> process manager helping Developers and Devops manage Node.js applications in production environment. In comparison with other process manager like Supervisord, Forever, <a href="https://en.wikipedia.org/wiki/Systemd" title="Systemd" target="_blank" rel="noopener">Systemd</a>, some key features of PM2 are automatic application load balancing, declarative application configuration, deployment system and monitoring.<br>&emsp;&emsp;Started in 2013 by Alexandre Strzelewicz. The code source is hosted on <a href="https://en.wikipedia.org/wiki/GitHub" title="GitHub" target="_blank" rel="noopener">GitHub</a> and installable via <a href="https://en.wikipedia.org/wiki/Npm_(software" target="_blank" rel="noopener">Npm (software)</a> “Npm (software)”).<br><code>说明：本次安装环境为CentOS7上进行</code><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/19/PM2的安装和使用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -758,175 +675,6 @@ serve|expose [path] [port]                           serve a directory over http
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.cjwvip.com/2018/06/08/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiawei Cheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tiny C">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/08/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-08T14:20:35+08:00">
-                2018-06-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2018/06/08/hello-world/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://blog.cjwvip.com/2018/06/08/hello-world/" class="cy_cmt_count" data-xid="2018/06/08/hello-world/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-             <span id="/2018/06/08/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  78
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -977,7 +725,7 @@ serve|expose [path] [port]                           serve a directory over http
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
