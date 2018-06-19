@@ -3,12 +3,22 @@
 
     <sitemap>
         <loc>http://blog.cjwvip.com/post-sitemap.xml</loc>
-        <lastmod>2018-06-19T07:32:53.328Z</lastmod>
+        <lastmod>2018-06-19T07:37:09.244Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>http://blog.cjwvip.com/page-sitemap.xml</loc>
         <lastmod>2018-06-19T07:15:37.396Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://blog.cjwvip.com/category-sitemap.xml</loc>
+        <lastmod>2018-06-19T07:37:09.244Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://blog.cjwvip.com/tag-sitemap.xml</loc>
+        <lastmod>2018-06-19T07:37:09.244Z</lastmod>
     </sitemap>
 
 </sitemapindex>
