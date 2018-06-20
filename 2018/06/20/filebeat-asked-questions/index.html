@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="filebeat," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tiny C">
-<meta property="og:url" content="http://blog.cjwvip.com/categories/Ruby/index.html">
+<meta name="description" content="集中式日志分析平台 - ELK Stack - Filebeat 的注意事项&amp;emsp;&amp;emsp;了解 Filebeat 哪些事儿我搞不定，哪些事儿我无法承诺。官方文档是一个非常好的参考：Frequently Asked Questions。 无法从网络 Volumes 读取 Log不建议使用 Filebeat 从网络 Volumes 读取日志文件。 尽可能在主机上安装 Filebeat 并从那">
+<meta name="keywords" content="filebeat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Filebeat 注意事项">
+<meta property="og:url" content="http://blog.cjwvip.com/2018/06/20/filebeat-asked-questions/index.html">
 <meta property="og:site_name" content="Tiny C">
+<meta property="og:description" content="集中式日志分析平台 - ELK Stack - Filebeat 的注意事项&amp;emsp;&amp;emsp;了解 Filebeat 哪些事儿我搞不定，哪些事儿我无法承诺。官方文档是一个非常好的参考：Frequently Asked Questions。 无法从网络 Volumes 读取 Log不建议使用 Filebeat 从网络 Volumes 读取日志文件。 尽可能在主机上安装 Filebeat 并从那">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-20T03:50:13.678Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tiny C">
+<meta name="twitter:title" content="Filebeat 注意事项">
+<meta name="twitter:description" content="集中式日志分析平台 - ELK Stack - Filebeat 的注意事项&amp;emsp;&amp;emsp;了解 Filebeat 哪些事儿我搞不定，哪些事儿我无法承诺。官方文档是一个非常好的参考：Frequently Asked Questions。 无法从网络 Volumes 读取 Log不建议使用 Filebeat 从网络 Volumes 读取日志文件。 尽可能在主机上安装 Filebeat 并从那">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.cjwvip.com/categories/Ruby/"/>
+  <link rel="canonical" href="http://blog.cjwvip.com/2018/06/20/filebeat-asked-questions/"/>
 
 
 
 
 
-  <title>分类: Ruby | Tiny C</title>
+  <title>Filebeat 注意事项 | Tiny C</title>
   
 
 
@@ -150,7 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div> 
     <a href="https://github.com/cjw0202" class="github-corner" aria-label="View source on Github">
         <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
@@ -316,55 +321,278 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Ruby<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cjwvip.com/2018/06/20/filebeat-asked-questions/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jiawei Cheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tiny C">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/06/19/Ruby-learning-one/" itemprop="url">
-              
-                <span itemprop="name">Ruby learning one</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Filebeat 注意事项</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-19T18:01:57+08:00"
-              content="2018-06-19" >
-          06-19
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-20T11:48:24+08:00">
+                2018-06-20
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ELK/" itemprop="url" rel="index">
+                    <span itemprop="name">ELK</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/06/20/filebeat-asked-questions/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/06/20/filebeat-asked-questions/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2018/06/20/filebeat-asked-questions/" class="leancloud_visitors" data-flag-title="Filebeat 注意事项">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,886
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="集中式日志分析平台-ELK-Stack-Filebeat-的注意事项"><a href="#集中式日志分析平台-ELK-Stack-Filebeat-的注意事项" class="headerlink" title="集中式日志分析平台 - ELK Stack - Filebeat 的注意事项"></a>集中式日志分析平台 - ELK Stack - Filebeat 的注意事项</h2><p>&emsp;&emsp;了解 Filebeat <code>哪些事儿我搞不定</code>，<code>哪些事儿我无法承诺</code>。官方文档是一个非常好的参考：<a href="https://link.jianshu.com/?t=https://www.elastic.co/guide/en/beats/filebeat/current/faq.html" target="_blank" rel="noopener">Frequently Asked Questions</a>。</p>
+<h3 id="无法从网络-Volumes-读取-Log"><a href="#无法从网络-Volumes-读取-Log" class="headerlink" title="无法从网络 Volumes 读取 Log"></a>无法从网络 Volumes 读取 Log</h3><p>不建议使用 Filebeat 从网络 Volumes 读取日志文件。 尽可能在主机上安装 Filebeat 并从那里直接发送日志文件。 从网络Volumes 读取文件（尤其是在Windows上）可能会产生意外的副作用。 例如，更改的文件标识符可能导致 Filebeat 再次从头读取日志文件。<br><a id="more"></a></p>
+<h3 id="Filebeat-无法采集数据"><a href="#Filebeat-无法采集数据" class="headerlink" title="Filebeat 无法采集数据"></a>Filebeat 无法采集数据</h3><p>这可能是因为 Filebeat 配置不正确或无法将事件发送到 output，解决方案：</p>
+<ul>
+<li>确保配置文件指定正在收集的文件的正确路径。 有关详细信息，请参阅 <a href="https://link.jianshu.com/?t=https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-configuration.html" target="_blank" rel="noopener">Step 2: Configuring Filebeat</a>。</li>
+<li>验证文件是否早于 <a href="https://link.jianshu.com/?t=https://www.elastic.co/guide/en/beats/filebeat/current/configuration-filebeat-options.html#ignore-older" target="_blank" rel="noopener"><code>ignore_older</code></a> 指定的值。 <code>ignore_older</code> 默认是禁用的，这取决于设置的值。 我们可以通过为 <code>ignore_older</code> 指定不同的值来更改此行为。</li>
+<li>确保 Filebeat 能够将事件发送到已配置的 output。 在调试模式下运行 Filebeat 以确定它是否成功发布事件：</li>
+</ul>
+<p><code>./filebeat -c config.yml -e -d &quot;*&quot;</code></p>
+<p>下面说说 <code>ignore_older</code> 这个配置：</p>
+<p>如果启用此选项，Filebeat 将忽略在指定时间跨度之前修改的任何文件。 如果我们将日志文件保留很长时间，那么配置<code>ignore_older</code> 尤其有用。 例如，如果要启动 <code>Filebeat</code>，但只想发送最新文件和自上周以来的文件，则可以配置此选项。我们可以使用时间字符串，如 2h（2小时）和 5m（5分钟）。 默认值为<code>0</code>，禁用该设置。 注释掉配置与将其设置为0具有相同的效果。</p>
+<blockquote>
+<p>注意：我们必须设置 ignore_older &gt; close_inactive。</p>
+</blockquote>
+<p>配置项 <code>close_inactive</code> 表示在 <code>harvester</code> 读取某文件最后一行日志之后，持续时间内某文件没有再写入日志，Filebeat 将关闭文件句柄，默认是 5m。</p>
+<h3 id="发生-Too-many-open-files"><a href="#发生-Too-many-open-files" class="headerlink" title="发生 Too many open files"></a>发生 Too many open files</h3><p>Filebeat 会持续保持着句柄，以便以便它可以近乎实时地读取新的日志行。如果 Filebeat 正在收集大量文件，则打开的文件数可能会成为问题。在大多数环境中，活动更新的文件数较少。应相应设置 <code>close_inactive</code> 配置选项以关闭不再活动的文件。</p>
+<p>还有其他配置选项可以用来关闭文件处理程序，但是所有这些配置选项都应该仔细使用，因为它们可能有副作用。选项是：</p>
+<p><code>close_renamed</code><br><code>close_removed</code><br><code>close_eof</code><br><code>close_timeout</code><br><code>harvester_limit</code><br><code>close_renamed</code> 和 <code>close_removed</code> 选项在 Windows 上可用于解决与 log rotate 相关的问题。请参阅 <a href="https://link.jianshu.com/?t=https://www.elastic.co/guide/en/beats/filebeat/current/faq.html#windows-file-rotation" target="_blank" rel="noopener">the section called “Open file handlers cause issues with Windows file rotation?</a>。 <code>close_eof</code> 选项在包含大量文件且只有很少 entries 的环境中很有用。<code>close_timeout</code> 选项在允许数据丢失且必须对文件句柄关闭非常重视的情况下非常有用。有关更多详细信息，请参阅 <a href="https://link.jianshu.com/?t=https://www.elastic.co/guide/en/beats/filebeat/current/configuration-filebeat-options.html" target="_blank" rel="noopener">Filebeat Prospectors Configuration</a>。</p>
+<p>在使用任何配置选项之前，请确保阅读了这些配置选项的文档。</p>
+<h3 id="Registry-file-过大"><a href="#Registry-file-过大" class="headerlink" title="Registry file 过大"></a>Registry file 过大</h3><p>Filebeat保持每个文件的状态，并将状态保持在 registry_file 中。 Filebeat 重新启动时，文件状态用于继续在先前位置读取文件。 如果每天生成大量的新文件，则 文registry_file 件可能会增长得太大。 要减小 registry_file 的大小，有两个可用的配置选项：<code>clean_removed</code> 和 <code>clean_inactive</code>。</p>
+<p>对于不再 touch 并需要 ignore 的旧文件，建议使用 <code>clean_inactive</code>。 对于已经从磁盘删除的旧文件，则使用 <code>clean_removed</code> 选项。</p>
+<h3 id="Inode-复用造成数据采集缺失"><a href="#Inode-复用造成数据采集缺失" class="headerlink" title="Inode 复用造成数据采集缺失"></a>Inode 复用造成数据采集缺失</h3><p>在 Linux 文件系统上，Filebeat 使用 inode 和 device 来标识文件。当文件从磁盘中删除时，可以将 inode 分配给一个新文件。在涉及文件轮换的用例中，如果旧文件被删除，并且之后立即创建新文件，则新文件可以具有与被移除的文件完全相同的 inode。在这种情况下，Filebeat 假定新文件与旧文件相同，并尝试在旧 offset 继续读取，这是不正确的。</p>
+<p>默认情况下，永远不会从 registry_file 中删除。要解决 inode 复用问题，建议使用 <code>clean_ *</code> 选项，特别是 <code>clean_inactive</code>，以删除非活动文件的状态。例如，如果文件每 24 小时轮换一次，并且轮转的文件不再更新，可以将<code>ignore_older</code> 设置为48小时，将 <code>clean_inactive</code> 设置为72小时。</p>
+<p>对于从磁盘中删除的文件，可以使用 <code>clean_removed</code> 。请注意，每当在扫描期间找不到文件时，<code>clean_removed</code> 会从 registry_file 清除文件状态。如果文件稍后再次显示，则将从头重新发送。</p>
+<h3 id="Filebeat-使用了过多-CPU"><a href="#Filebeat-使用了过多-CPU" class="headerlink" title="Filebeat 使用了过多 CPU"></a>Filebeat 使用了过多 CPU</h3><p>Filebeat 可能被配置为太频繁地扫描文件。 检查 <code>filebeat.yml</code> 配置文件中 <code>scan_frequency</code>的设置。 将<code>scan_frequency</code> 设置为小于1秒可能导致 Filebeat 扫描磁盘过于频繁。</p>
+<h3 id="字段在-Kibana-可视化中不可被索引"><a href="#字段在-Kibana-可视化中不可被索引" class="headerlink" title="字段在 Kibana 可视化中不可被索引"></a>字段在 Kibana 可视化中不可被索引</h3><p>如果最近执行了 loads 或解析自定义结构化日志的操作，则可能需要刷新索引以使字段在 Kibana 中可用。 要刷新索引，请使用刷新API。 例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -XPOST &apos;http://localhost:9200/filebeat-2016.08.09/_refresh&apos;</span><br></pre></td></tr></table></figure>
+<h3 id="Filebeat-总是不发送文件的最后一行"><a href="#Filebeat-总是不发送文件的最后一行" class="headerlink" title="Filebeat 总是不发送文件的最后一行"></a>Filebeat 总是不发送文件的最后一行</h3><p>Filebeat 使用换行符来检测事件的结束。 如果行被递增地添加到正在收集的文件，则最后一行之后需要换行符，否则Filebeat 将不会读取文件的最后一行。</p>
+<h3 id="如何对-Filebeat-限带宽"><a href="#如何对-Filebeat-限带宽" class="headerlink" title="如何对 Filebeat 限带宽"></a>如何对 Filebeat 限带宽</h3><p>如果需要限制带宽使用，建议在操作系统上配置网络堆栈以执行带宽限制。</p>
+<p>例如，以下 Linux 命令通过在端口 5044 上对 TCP 连接设置 50 kbps 的限制来限制 Filebeat 和 Logstash 之间的连接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tc qdisc add dev $DEV root handle 1: htb</span><br><span class="line">tc class add dev $DEV parent 1:1 classid 1:10 htb rate 50kbps ceil 50kbps</span><br><span class="line">tc filter add dev $DEV parent 1:0 prio 1 protocol ip handle 10 fw flowid 1:10</span><br><span class="line">iptables -A OUTPUT -t mangle -p tcp --dport 5044 -j MARK --set-mark 10</span><br></pre></td></tr></table></figure>
+<p>使用OS工具执行带宽限制可以更好地控制策略。 例如，可以使用操作系统工具在白天限制带宽，但不能在夜间限制。 或者，可以保留带宽未封顶，但为流量分配低优先级。</p>
+<h3 id="常见的-SSL-相关错误和解决方案"><a href="#常见的-SSL-相关错误和解决方案" class="headerlink" title="常见的 SSL 相关错误和解决方案"></a>常见的 SSL 相关错误和解决方案</h3><p>以下是一些常见的错误和解决方法：</p>
+<p><code>x509: cannot validate certificate for &lt;IP address&gt; because it doesn’t contain any IP SANs</code></p>
+<p>这是因为证书仅对 Subject filed 中显示的 hostname 有效。要解决此问题，请尝试以下解决方案：</p>
+<ul>
+<li>为主机名创建一个DNS条目，将其映射到服务器的IP。</li>
+<li>在<code>/etc/hosts</code>中为主机名创建一个条目。或在 Windows 上添加一个条目到<code>C:\Windows\System32\drivers\etc\hosts</code>。</li>
+<li>重新创建服务器证书，并为服务器的IP地址添加 SubjectAltName（SAN）。这使服务器的证书对主机名和IP地址都有效。</li>
+</ul>
+<p><code>getsockopt: no route to host</code><br>这不是SSL问题。这是一个网络问题。确保两个主机可以通信。</p>
+<p><code>getsockopt：connection refused</code><br>这不是SSL问题。确保 Logstash 正在运行，并且没有防火墙阻止流量。</p>
+<p><code>No connection could be made because the target machine actively refused it</code><br>防火墙拒绝连接。检查防火墙是否阻止客户端，网络或目标主机上的流量。</p>
+<p>以上。。</p>
+<p>转载于<a href="https://www.jianshu.com/p/d53e80e3b0bd" target="_blank" rel="noopener">https://www.jianshu.com/p/d53e80e3b0bd</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的打赏是我创作的动力</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat_pay.jpg" alt="Jiawei Cheng 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/filebeat/" rel="tag"># filebeat</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/20/filebeat-learning-one/" rel="next" title="Starting with filebeat">
+                <i class="fa fa-chevron-left"></i> Starting with filebeat
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -372,6 +600,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -392,8 +629,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -467,6 +713,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#集中式日志分析平台-ELK-Stack-Filebeat-的注意事项"><span class="nav-number">1.</span> <span class="nav-text">集中式日志分析平台 - ELK Stack - Filebeat 的注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无法从网络-Volumes-读取-Log"><span class="nav-number">1.1.</span> <span class="nav-text">无法从网络 Volumes 读取 Log</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Filebeat-无法采集数据"><span class="nav-number">1.2.</span> <span class="nav-text">Filebeat 无法采集数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发生-Too-many-open-files"><span class="nav-number">1.3.</span> <span class="nav-text">发生 Too many open files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Registry-file-过大"><span class="nav-number">1.4.</span> <span class="nav-text">Registry file 过大</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inode-复用造成数据采集缺失"><span class="nav-number">1.5.</span> <span class="nav-text">Inode 复用造成数据采集缺失</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Filebeat-使用了过多-CPU"><span class="nav-number">1.6.</span> <span class="nav-text">Filebeat 使用了过多 CPU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字段在-Kibana-可视化中不可被索引"><span class="nav-number">1.7.</span> <span class="nav-text">字段在 Kibana 可视化中不可被索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Filebeat-总是不发送文件的最后一行"><span class="nav-number">1.8.</span> <span class="nav-text">Filebeat 总是不发送文件的最后一行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何对-Filebeat-限带宽"><span class="nav-number">1.9.</span> <span class="nav-text">如何对 Filebeat 限带宽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的-SSL-相关错误和解决方案"><span class="nav-number">1.10.</span> <span class="nav-text">常见的 SSL 相关错误和解决方案</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -607,6 +869,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

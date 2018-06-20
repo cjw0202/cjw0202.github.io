@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://blog.cjwvip.com/2018/06/20/filebeat-asked-questions/</loc>
+        <lastmod>2018-06-20T03:50:13.678Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.cjwvip.com/2018/06/20/filebeat-learning-one/</loc>
+        <lastmod>2018-06-20T01:45:47.410Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://blog.cjwvip.com/2018/06/19/Ruby-learning-one/</loc>
         <lastmod>2018-06-19T10:04:05.743Z</lastmod>
         <changefreq>weekly</changefreq>
