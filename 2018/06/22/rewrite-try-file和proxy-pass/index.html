@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Nginx," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="个人信息姓名：程加伟 公司：Shein 伴侣：李欢欢 学校：辽宁工程技术大学 毕业：2015 学历：本科 E-mail：weijia0202@outlook.com 专业">
-<meta property="og:type" content="website">
-<meta property="og:title" content="About Me">
-<meta property="og:url" content="http://blog.cjwvip.com/about/index.html">
+<meta name="description" content="###rewrite syntax: rewrite regex replacement [flag] Context: server, location, if  如果正则表达式（regex）匹配到了请求的URI（request URI），这个URI会被后面的replacement替换 rewrite的定向会根据他们在配置文件中出现的顺序依次执行 通过使用flag可以终止定向后进一步的处理 如果">
+<meta name="keywords" content="Nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rewrite try_file和proxy_pass">
+<meta property="og:url" content="http://blog.cjwvip.com/2018/06/22/rewrite-try-file和proxy-pass/index.html">
 <meta property="og:site_name" content="Tiny C">
-<meta property="og:description" content="个人信息姓名：程加伟 公司：Shein 伴侣：李欢欢 学校：辽宁工程技术大学 毕业：2015 学历：本科 E-mail：weijia0202@outlook.com 专业">
+<meta property="og:description" content="###rewrite syntax: rewrite regex replacement [flag] Context: server, location, if  如果正则表达式（regex）匹配到了请求的URI（request URI），这个URI会被后面的replacement替换 rewrite的定向会根据他们在配置文件中出现的顺序依次执行 通过使用flag可以终止定向后进一步的处理 如果">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-13T02:16:31.038Z">
+<meta property="og:updated_time" content="2018-06-22T09:41:47.712Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About Me">
-<meta name="twitter:description" content="个人信息姓名：程加伟 公司：Shein 伴侣：李欢欢 学校：辽宁工程技术大学 毕业：2015 学历：本科 E-mail：weijia0202@outlook.com 专业">
+<meta name="twitter:title" content="rewrite try_file和proxy_pass">
+<meta name="twitter:description" content="###rewrite syntax: rewrite regex replacement [flag] Context: server, location, if  如果正则表达式（regex）匹配到了请求的URI（request URI），这个URI会被后面的replacement替换 rewrite的定向会根据他们在配置文件中出现的顺序依次执行 通过使用flag可以终止定向后进一步的处理 如果">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.cjwvip.com/about/"/>
+  <link rel="canonical" href="http://blog.cjwvip.com/2018/06/22/rewrite-try-file和proxy-pass/"/>
 
 
 
 
 
-  <title>About Me | Tiny C</title>
+  <title>rewrite try_file和proxy_pass | Tiny C</title>
   
 
 
@@ -322,40 +323,316 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.cjwvip.com/2018/06/22/rewrite-try-file和proxy-pass/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jiawei Cheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tiny C">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">About Me</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h3 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h3><pre><code>姓名：程加伟
-公司：Shein
-伴侣：李欢欢
-学校：辽宁工程技术大学
-毕业：2015
-学历：本科
-E-mail：weijia0202@outlook.com
-</code></pre><h3 id="专业"><a href="#专业" class="headerlink" title="专业"></a>专业</h3>
+          <h1 class="post-title" itemprop="name headline">rewrite try_file和proxy_pass</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-22T17:40:44+08:00">
+                2018-06-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/" itemprop="url" rel="index">
+                    <span itemprop="name">Server</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/06/22/rewrite-try-file和proxy-pass/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/06/22/rewrite-try-file和proxy-pass/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2018/06/22/rewrite-try-file和proxy-pass/" class="leancloud_visitors" data-flag-title="rewrite try_file和proxy_pass">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  802
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>###rewrite</p>
+<pre><code>syntax: rewrite regex replacement [flag]
+Context: server, location, if
+</code></pre><ul>
+<li>如果正则表达式（<em>regex</em>）匹配到了请求的URI（request URI），这个URI会被后面的<em>replacement</em>替换</li>
+<li><em>rewrite</em>的定向会根据他们在配置文件中出现的顺序依次执行</li>
+<li>通过使用<em>flag</em>可以终止定向后进一步的处理</li>
+<li>如果replacement以“http://”, “https://”, or “$scheme”开头，处理将会终止，请求结果会以重定向的形式返回给客户端（client）</li>
+<li>如果<em>replacement</em>字符串里有新的request参数，那么之前的参数会附加到其后面，如果要避免这种情况，那就在<em>replacement</em>字符串后面加上“？”</li>
+<li>如果正则表达式（<em>regex</em>）里包含“}” or “;”字符，需要用单引号或者双引号把正则表达式引起来</li>
+</ul>
+<p>可选的<em>flag</em>参数如下：<br><a id="more"></a></p>
+<h4 id="last"><a href="#last" class="headerlink" title="last"></a>last</h4><ol>
+<li>结束当前的请求处理，用替换后的URI重新匹配location；</li>
+<li>可理解为重写（rewrite）后，发起了一个新请求，进入server模块，匹配location；</li>
+<li>如果重新匹配循环的次数超过10次，nginx会返回500错误；</li>
+<li>返回302 http状态码 ；</li>
+<li>浏览器地址栏显示重地向后的url</li>
+</ol>
+<h4 id="break"><a href="#break" class="headerlink" title="break"></a>break</h4><ol>
+<li>结束当前的请求处理，使用当前资源，不在执行location里余下的语句；</li>
+<li>返回302 http状态码 ；</li>
+<li>浏览器地址栏显示重地向后的url</li>
+</ol>
+<h4 id="redirect"><a href="#redirect" class="headerlink" title="redirect"></a>redirect</h4><ol>
+<li>临时跳转，返回302 http状态码；</li>
+<li>浏览器地址栏显示重地向后的url</li>
+</ol>
+<h4 id="permanent"><a href="#permanent" class="headerlink" title="permanent"></a>permanent</h4><ol>
+<li>永久跳转，返回301 http状态码；</li>
+<li><p>浏览器地址栏显示重定向后的url</p>
+<h3 id="proxy-pass"><a href="#proxy-pass" class="headerlink" title="proxy_pass"></a>proxy_pass</h3><p>Syntax:    proxy_pass URL;<br>Context:    location, if in location, limit_except</p>
+</li>
+</ol>
+<ul>
+<li>不影响浏览器地址栏的url</li>
+<li>设置被代理server的协议和地址，URI可选（可以有，也可以没有）</li>
+<li>协议可以为http或https</li>
+<li><p>地址可以为域名或者IP，端口可选；eg：</p>
+<p>  proxy_pass <a href="http://localhost:8000/uri/" target="_blank" rel="noopener">http://localhost:8000/uri/</a>;</p>
+</li>
+<li><p>如果一个域名可以解析到多个地址，那么这些地址会被轮流使用，此外，还可以把一个地址指定为 server group（如：nginx的upstream）, eg:</p>
+<pre><code>upstream backend {
+  server backend1.example.com       weight=5;
+  server backend2.example.com:8080;
+  server unix:/tmp/backend3;
+  server backup1.example.com:8080 backup;
+  server backup2.example.com:8080 backup;
+}
+server {
+  location / {
+    proxy_pass http://backend;
+ }
+}
+</code></pre></li>
+<li><p>server name， port， URI支持变量的形式，eg：</p>
+<pre><code>proxy_pass http://$host$uri;
+</code></pre></li>
+</ul>
+<p>这种情况下，nginx会在server groups（upstream后端server）里搜索server name，如果没有找到，会用dns解析</p>
+<p>请求的URI按照下面的规则传给后端server</p>
+<ol>
+<li><p>如果proxy_pass的URL定向里包括URI，那么请求中匹配到location中URI的部分会被proxy_pass后面URL中的URI替换，eg：</p>
+<pre><code>location /name/ {
+  proxy_pass http://127.0.0.1/remote/;
+}
+</code></pre><p>请求<a href="http://127.0.0.1/name/test.html" target="_blank" rel="noopener">http://127.0.0.1/name/test.html</a> 会被代理到<a href="http://example.com/remote/test.html" target="_blank" rel="noopener">http://example.com/remote/test.html</a></p>
+</li>
+<li><p>如果proxy_pass的URL定向里不包括URI，那么请求中的URI会保持原样传送给后端server，eg：</p>
+<pre><code>location /name/ {
+  proxy_pass http://127.0.0.1;
+}
+</code></pre><p>请求<a href="http://127.0.0.1/name/test.html" target="_blank" rel="noopener">http://127.0.0.1/name/test.html</a> 会被代理到<a href="http://127.0.0.1/name/test.html" target="_blank" rel="noopener">http://127.0.0.1/name/test.html</a></p>
+</li>
+<li><p>一些情况下，不能确定替换的URI</p>
+<ol>
+<li>location里是正则表达式，这种情况下，proxy_pass里最好不要有URI</li>
+<li><p>在proxy_pass前面用了rewrite，如下，这种情况下，proxy_pass是无效的，eg：</p>
+<pre><code>location /name/ {
+  rewrite /name/([^/]+) /users?name=$1 break;
+  proxy_pass http://127.0.0.1;
+  }
+</code></pre></li>
+</ol>
+</li>
+</ol>
+
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的打赏是我创作的动力</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat_pay.jpg" alt="Jiawei Cheng 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Nginx/" rel="tag"># Nginx</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/21/sphinx安装配置/" rel="next" title="sphinx安装配置">
+                <i class="fa fa-chevron-left"></i> sphinx安装配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -364,6 +641,15 @@ E-mail：weijia0202@outlook.com
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -478,7 +764,7 @@ E-mail：weijia0202@outlook.com
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#个人信息"><span class="nav-number">1.</span> <span class="nav-text">个人信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#专业"><span class="nav-number">2.</span> <span class="nav-text">专业</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#last"><span class="nav-number">1.</span> <span class="nav-text">last</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#break"><span class="nav-number">2.</span> <span class="nav-text">break</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#redirect"><span class="nav-number">3.</span> <span class="nav-text">redirect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#permanent"><span class="nav-number">4.</span> <span class="nav-text">permanent</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proxy-pass"><span class="nav-number"></span> <span class="nav-text">proxy_pass</span></a></div>
             
 
           </div>

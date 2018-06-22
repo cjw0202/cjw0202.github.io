@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://blog.cjwvip.com/2018/06/22/rewrite-try-file%E5%92%8Cproxy-pass/</loc>
+        <lastmod>2018-06-22T09:41:47.712Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blog.cjwvip.com/2018/06/21/sphinx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</loc>
+        <lastmod>2018-06-21T02:45:43.165Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://blog.cjwvip.com/2018/06/20/filebeat-asked-questions/</loc>
         <lastmod>2018-06-20T08:03:00.732Z</lastmod>
         <changefreq>weekly</changefreq>
